@@ -87,22 +87,10 @@ def work_acos(A,B,C):
     return X
 
 
-'''
-#############################################################
 ################## GEOMETRIC DEFINITIONS ####################
 ##################        START          ####################
-#############################################################
-'''
 
-########################################
-### Aker = Outward facing lines      ###        
-### God of the horizon               ###        
-########################################        
-### Developed Using These Integars              
-### (aker_y=1,aker_span=10,aker_start=-50,
-### aker_start_increase = 15,aker_no=5,aker_length=300,
-### aker_length_increase=-30,aker_angle=12,aker_angle_increase=5,
-### aker_gap=10,aker_gap_increase=2,aker_pensize=3,aker_color='#F09900')
+
 
 def aker(aker_y=1,aker_span=10,aker_start=-50,
          aker_start_increase = 15,aker_no=5,aker_length=300,
@@ -147,13 +135,7 @@ def aker(aker_y=1,aker_span=10,aker_start=-50,
         osiris.setheading(osirisHeadingStart)
 
 
-########################################
-### Amun = Central Spikes            ###        
-### Creator God, Associated With Ra  ###        
-########################################        
-
-### Developed Using These Integars              
-### (1,10,0,360,40,100,4,'#BFDDE1')               
+  
 
 def amun(amun_y,amun_no,amun_angle_a,amun_angle_b,
          amun_forward_a,amun_forward_b,
@@ -168,13 +150,6 @@ def amun(amun_y,amun_no,amun_angle_a,amun_angle_b,
             osiris.pendown()
             osiris.forward(randint(amun_forward_a,amun_forward_b))
         osiris.penup()
-
-########################
-### Amunet = Diamond ###
-### Creation Godess  ###   
-########################
-### Developed using
-### 1,20,200,9,'#FF4444
 
 def amunet(amunet_y,amunet_start,amunet_size,
            amunet_pensize,amunet_color):
@@ -195,12 +170,6 @@ def amunet(amunet_y,amunet_start,amunet_size,
         osiris.goto(osirisCurrentX, osirisCurrentY)    
         osiris.setheading(osirisHeadingStart)
 
-#######################################
-### Anhur = Forward Facing Chevrons ###
-### Sky god and god of war          ###
-#######################################
-### Developed using
-### 1,50,6,100,15,135,5,'#FF4444'
 
 def anhur(anhur_y,anhur_start,anhur_no,
           anhur_size,anhur_spacing,
@@ -231,13 +200,6 @@ def anhur(anhur_y,anhur_start,anhur_no,
         osiris.goto(osirisCurrentX, osirisCurrentY)    
         osiris.setheading(osirisHeadingStart)
 
-
-##########################################
-### Anput = Double Helix               ###        
-### Goddess of dead and mummification  ###        
-##########################################
-### Developed Using These Integars
-### (1,0,1,30,4,1,'#4C9FC1')            
 
 def anput(anput_y,anput_start,anput_outer,
           anput_outer_size,anput_outerpensize,
@@ -311,13 +273,6 @@ def anput(anput_y,anput_start,anput_outer,
         osiris.forward(anput_outer_size*1)
         osirisCurrentX = osiris.xcor() 
         osirisCurrentY = osiris.ycor()
-        
-################################################
-### Anubis = Concentric squares with shapes  ###
-### Protector of the gates to the underworld ###
-################################################
-### Developed using
-### (1,4,400,40,0,14,6,1,14,8,3,3,'#90CC16')
 
 def anubis(anubis_y,anubis_no,anubis_size,anubis_reduction,
            anubis_dot_y,anubis_dot_no,anubis_dot_size,
@@ -385,21 +340,6 @@ def anubis(anubis_y,anubis_no,anubis_size,anubis_reduction,
                 osiris.forward(anubis_size)
             osiris.penup()
 
-
-###################################################
-### Anubis = Upward spikes and downward slashes ###
-### Warlike Egyptian Lion God                   ###
-###################################################
-### Developed using
-##    apedemak_y=1,apedemak_start=0,
-##    apedemak_span_angle=70,apedemak_spike_inner_angle= 60,
-##    apedemak_length = 400,apedemak_spike_no = 5,
-##    apedemak_little_spike = 1,apedemak_little_spike_type = 'percentage',
-##    apedemak_little_spike_reduction = 0.5,adepemak_slash_space = 0.5,
-##    adepemak_slash_extension = 200,adepemak_slash_no = 3,
-##    apedemak_spike_pensize = 4,apedemak_spike_color = '#FF4400',
-##    apedemak_little_spike_pensize = 3,apedemak_little_spike_color = '#FF4499',
-##    apedemak_slash_pensize = 6,apedemak_slash_color = '#4444FF' 
 
 def apedemak(
     apedemak_y=1,apedemak_start=0,
@@ -478,9 +418,7 @@ def apedemak(
                 apedemak_spike_upwards = (work_tan_opp
                                           (apedemak_spike_hor,
                                            apedemak_spike_angle))
-                # Now we work out the actual spike height -
-                # We can use pythag because we calcuated the above on
-                # a right angle triangle - neat :)
+                
                 apedemak_spike_length = pythag(apedemak_spike_upwards,
                                               apedemak_spike_hor)
                 # We need this measurement to work out the first slash
@@ -600,20 +538,7 @@ def apedemak(
                 osiris.pendown()
                 osiris.forward(apedemak_slash_length_2plus)
                 osiris.penup()    
-
-################################################
-### Apep = Tiled Square with squares         ###        
-### Serpent that ersonified malevolent chaos ###        
-################################################   
-### Developed Using   
-### (1,200,1,1,1,8,1,'#368BC1','#368B71')
-
-### APEP NO ##########
-## 1 = 1 OUTER RING ##
-## 2 = 2 OUTER RING ##
-## 3 = 3 OUTER RING ##
-## ETC              ##
-######################        
+        
 
 def apep(apep_y,apep_size,apep_square_y_n,
          apep_stroke,apep_no,apep_quads,
@@ -708,12 +633,6 @@ def apep(apep_y,apep_size,apep_square_y_n,
                     osiris.forward(apep_size)
                     apep_square()
    
-############################################
-### Aten - Circle with extenuating lines ###        
-### Disk of the sun                      ###        
-############################################   
-### Developed Using These Integars
-### (0,200,1,'#901273','#1FC012')
 
 def aten(aten_y,aten_start,aten_circle_size,aten_gap,
          aten_ray_no,aten_ray_span,aten_ray_length,
@@ -762,13 +681,6 @@ def aten(aten_y,aten_start,aten_circle_size,aten_gap,
         osiris.forward(aten_circle_size)
 
                  
-####################################
-### Bast = Zig Zag Lines         ###        
-### Goddess of protection        ###        
-####################################   
-### Developed Using These Integars               
-### (0,16,120,0,4,'#45FF00',
-### osirisStartingX,osirisStartingY)
 
 def bast(bast_y,bast_start,bast_angle,
          bast_forward,bast_no,bast_pensize,
@@ -826,20 +738,7 @@ def bast(bast_y,bast_start,bast_angle,
                     osiris.left(bast_angle)
                 osiris.forward(bast_forward*4) 
             osiris.penup()
-
-#############################################
-### Bennu = Tiled Square with triangles   ###        
-### Linked with sun, creation and rebirth ###        
-#############################################   
-### Developed Using    
-### (200,1,1,1,8,1,'#368BC1','#368B71')##
-
-### BENNU NO #########
-## 1 = 1 OUTER RING ##
-## 2 = 2 OUTER RING ##
-## 3 = 3 OUTER RING ##
-## ETC              ##
-######################        
+        
 
 def bennu(bennu_y,bennu_size,bennu_square_y_n,
           bennu_stroke,bennu_no,bennu_quads,
@@ -942,15 +841,6 @@ def bennu(bennu_y,bennu_size,bennu_square_y_n,
                     osiris.forward(bennu_size)
                     bennu_square()
 
-#######################################
-### Geb = Filled in circle segments ###        
-### Father of snakes                ###        
-#######################################        
-### Developed Using             
-### geb_y=1,geb_no=1,geb_circum_a=20,geb_circum_b=200,
-### geb_distance_a=100,geb_distance_b=300,
-### geb_circle_reduction_a=10,geb_circle_reduction_b=40,
-### geb_pensize=1,geb_pencolor='#FF0000',geb_fillcolor='#FF0000'
                     
 def geb(geb_y=1,geb_no=1,geb_circum_a=20,geb_circum_b=200,
         geb_distance_a=100,geb_distance_b=300,
@@ -982,14 +872,6 @@ def geb(geb_y=1,geb_no=1,geb_circum_a=20,geb_circum_b=200,
             osiris.end_fill()
             osiris.penup()
             
-####################################
-### Hapi = Criss cross lines     ###        
-### God of the nile              ###
-####################################        
-### Developed Using             
-### hapi_y=1,hapi_start=0,hapi_length=300,
-### hapi_angle=30,hapi_line_no=10,hapi_section_no=3,
-### hapi_space=20,hapi_pensize=5,hapi_color='#FF3333'):    
             
 def hapi(hapi_y=1,hapi_start=0,hapi_length=300,
          hapi_angle=30,hapi_line_no=10,hapi_section_no=3,
@@ -1052,12 +934,7 @@ def hapi(hapi_y=1,hapi_start=0,hapi_length=300,
                 osiris.setheading(osirisHeadingStart)
             osiris.goto(osirisCurrentX,osirisCurrentY)
 
-####################################
-### Hathor = Rotating Wings      ###        
-### Linked with sky and the sun  ###        
-####################################        
-### Developed Using             
-### (1, 50,10,8,48,12,120,8,10,10, 2,'#BBD0E1')     
+     
    
 def hathor(hathor_y,hathor_start,hathor_span,
            hathor_no,hathor_gap,hathor_angle,
@@ -1107,12 +984,6 @@ def hathor(hathor_y,hathor_start,hathor_span,
         osiris.setheading(osirisHeadingStart)
         osiris.forward((hathor_no*hathor_spacing)*2) 
 
-################################################
-### HEDETET = Curvey line with straight line ###        
-### Scorpion goddess                         ###        
-################################################ 
-### Developed Using
-### (1,0,2,60,80,1,0,1,4,'#F012EE') 
 
 def hedetet(hedetet_y,hedetet_start,hedetet_no,hedetet_size,
             hedetet_width,hedetet_right_y,hedetet_left_y,
@@ -1156,15 +1027,7 @@ def hedetet(hedetet_y,hedetet_start,hedetet_no,hedetet_size,
         osiris.setheading(osirisHeadingStart)
         osiris.penup()
 
-####################################
-### Hef = Random Squares         ###
-### Personification of infinity  ###
-####################################
-### Developed using
-### hef_y=1,hef_no=10,hef_angle_a=0,hef_angle_b=360,
-### hef_forward_a=0,hef_forward_b=300,hef_length_a=50,
-### hef_length_b=300,hef_pensize=6,hef_pencolor='#FFFFFF',
-### hef_fillcolor='#00FF00'
+
 
 def hef(hef_y=1,hef_no=10,hef_angle_a=0,hef_angle_b=360,
         hef_forward_a=0,hef_forward_b=300,hef_length_a=50,
@@ -1189,20 +1052,6 @@ def hef(hef_y=1,hef_no=10,hef_angle_a=0,hef_angle_b=360,
             osiris.end_fill()
             osiris.penup()
 
-########################################################################
-### Imhotep = Islamic-based tile, with zig zags and downward columns ###
-### Architect, engineer, scribe                                      ###
-########################################################################
-### Developed using
-###imhotep_y = 1,imhotep_width = 400,imhotep_height = 400,
-###imhotep_spike_no = 1,imhotep_row_no = 2,
-###imhotep_row_margin_percent = 10,imhotep_middle_buffer_percent=10,
-###imhotep_row_buffer = 10, imhotep_downward_length=75,
-###imhotep_downward_no=1, imhotep_downward_cols=1,
-###imhotep_row_pensize = 2, imhotep_row_color = '#FF3300',
-###imhotep_downward_pensize = 2, imhotep_downward_color = '#0033FF',
-###imhotep_bounding_pensize = 2, imhotep_bounding_color = '#00FF33',
-###imhotep_write_output=1):
 
 def imhotep(imhotep_y = 1,imhotep_width = 400,imhotep_height = 400,
             imhotep_spike_no = 1,imhotep_row_no = 2,
@@ -1249,36 +1098,17 @@ def imhotep(imhotep_y = 1,imhotep_width = 400,imhotep_height = 400,
             imhotep_spike_bottom_angle = (work_acos(imhotep_spike_width,
                                                     imhotep_spike_height,
                                                     imhotep_spike_length))
-            ### Once we have the bottom angle, we also know that the spike is
-            ### Essentially two right angle triangles, so we can do the math
-            ### Of 180 (as all triangles have 180 degrees), minus the bottom angle
-            ### to give us the top angle
+            
             imhotep_spike_top_angle = (180 - 90) - imhotep_spike_bottom_angle
 
-            ### ~~~~~~~ DOWNWARD COLUMNS LOGIC ~~~~~~~~ ###
-
-            ### So we need to work out how wide each of the 'slopes' is
-            ### on the downward columns. We do this by taking the width of the tile
-            ### then dividing it by the both the number of downward 'hockey sticks'
-            ### PLUS the number of downward columns. This bit works like a matrix,
-            ### so it's a bit hard to contextulise in text, but as we want everything
-            ### to stay within the tile, we know that (e.g.) if there are two columns
-            ### the first downward column has to finish 'one downward slope' from the
-            ### right hand edge, similarly, the second downward column has to start
-            ### 'one downward slope' from the left hand edge
+            
             imhotep_slope_width = (imhotep_width / (imhotep_downward_no+
                                                     imhotep_downward_cols))
-            ### To work out the height of each slope, we just use the height,
-            ### Take away the downward length (our input in the function) TIMES
-            ### The number of downward sections (hockey sticks). We then have to
-            ### divide all of this by the number of downward sections (hockey sticks)
-            ### BUT we have to account for the first downward slope, which isn't a hockey stick
-            ### so we have to add the one needed for this downward slope
+           
             imhotep_slope_height = ((imhotep_height - (imhotep_downward_length *
                                                       imhotep_downward_no))/
                                     (imhotep_downward_no+1))
-            ### As with the spikes, because we figured out the width and height of the
-            ### downward slope, we can then use ACOS to work out the actual drawn length
+           
             imhotep_slope_length = pythag(imhotep_slope_width,imhotep_slope_height)
             imhotep_slope_bottom_angle = (work_acos(imhotep_slope_width,imhotep_slope_height,
                                                     imhotep_slope_length))
@@ -1399,12 +1229,7 @@ def imhotep(imhotep_y = 1,imhotep_width = 400,imhotep_height = 400,
         else:
             print('Downward value too high, will draw outside of tile')
                                    
-####################################
-### Kebechet = Criss Cross Lines ###
-### Goddess of purification      ###
-####################################
-### Developed using
-### 1,50,12,75,100,40,10,3,'#FF4444') 
+
 
 def kebechet(kebechet_y=1,kebechet_start=50,kebechet_no=12,
              kebechet_distance=75,kebechet_length=100,kebechet_angle=40,
@@ -1450,14 +1275,7 @@ def kebechet(kebechet_y=1,kebechet_start=50,kebechet_no=12,
         osirisCurrentX = osiris.xcor()  
         osirisCurrentY = osiris.ycor()
         
-#######################################
-### Khepri = Isometric Tiles        ###
-### God of the rebirth and creation ###
-#######################################
-### Developed Using 
-### khepri_y=1,khepri_no=2,khepri_length=100,
-### khepri_density=4,khepri_pensize=1,
-### khepri_pencolor='#FF0000',khepri_fillcolor='#FF0000'
+
 
 def khepri(khepri_y=1,khepri_no=2,khepri_length=100,
            khepri_density=4,khepri_pensize=1,
@@ -1514,12 +1332,7 @@ def khepri(khepri_y=1,khepri_no=2,khepri_length=100,
                 osiris.right(60)
                 osiris.forward(khepri_length)
 
-#####################################
-### Khnum = Strong Vertical Lines ###
-### God of the river Nile         ###
-#####################################
-### Developed Using 
-### (1,0,1000,20,6,20,50,1,10,'#ff81C2')
+
 
 def khnum(khnum_y,khnum_start,khnum_length,
           khnum_gap,khnum_no,khnum_space,
@@ -1564,12 +1377,7 @@ def khnum(khnum_y,khnum_start,khnum_length,
         osiris.setheading(osirisHeadingStart)          
             
         
-#######################################
-### Khonsu = Geometric Star Pattern ###
-### God of the moon                 ###
-#######################################
-### Developed Using
-### (1,5,3,'#40CCFF'
+
 
 def khonsu(khonsu_y,khonsu_size,khonsu_no,
            khonsu_fill_color):
@@ -1664,12 +1472,7 @@ def khonsu(khonsu_y,khonsu_size,khonsu_no,
             osirisTemporaryX = osiris.xcor()
             osirisTemporaryY = osiris.ycor()
 
-##############################################################
-### Kuk = Diamond Shapes which grow inside and get smaller ###
-### Personification of darkness                            ###
-##############################################################
-### Developed Using 
-### (1,0,10,40,200,0.86,3,'#FF4444')  
+
     
 def kuk(kuk_y,kuk_start,kuk_no,kuk_angle,
         kuk_depth,kuk_gap,kuk_pensize,kuk_color):
@@ -1713,12 +1516,7 @@ def kuk(kuk_y,kuk_start,kuk_no,kuk_angle,
 
 
 
-##################################
-### Maat = Reverse Angel Wings ###
-### Goddess of truth, order    ###
-##################################
-### Developed Using 
-### (1,0,10,0,20,200,45,5,200,10,200,20,2,'#F778AA')
+
   
 def maat(maat_y,maat_start,maat_no,maat_gap,
          maat_vert_increase,maat_bar_size,
@@ -1773,12 +1571,7 @@ def maat(maat_y,maat_start,maat_no,maat_gap,
         osiris.forward(maat_vert_increase * maat_no)
           
 
-#####################################
-### Mafdet = Overlapping diamonds ###
-### Goddess of protection         ###
-#####################################
-### Developed Using
-### (1,0,10,200,10,0.86,40,20,2,'#512022')
+
 
 def mafdet(mafdet_y,mafdet_start,mafdet_no,mafdet_length,
            mafdet_vert_increase,mafdet_spacing,mafdet_angle,
@@ -1822,17 +1615,7 @@ def mafdet(mafdet_y,mafdet_start,mafdet_no,mafdet_length,
         osiris.forward((mafdet_length_act*2)
                        *mafdet_spacing)
         
-#####################################
-### Pakhet = Rhombus with criss cross lines
-### Goddess of war, lioness.      
-#####################################
 
-### Developed using
-### pakhet_y=1, pakhet_start=20, pakhet_no=4, pakhet_inner_no=4,
-### pakhet_inner_no_increase=2, pahket_angle_difference=12,
-### pakhet_gap=10, pakhet_length=100, pakhet_length_increase=10,
-### pakhet_outer_y=1, pakhet_outer_space=1.1, pakhet_main_pensize=4,
-### pakhet_inner_pensize=1, pakhet_outline_pensize=2, pakhet_color='#FF4444')
 def pakhet(pakhet_y=1,pakhet_start=20,pakhet_no=2,pakhet_inner_no=4,
                        pakhet_inner_no_increase=2,pahket_angle_difference=12,
                        pakhet_gap=10,pakhet_length=100,pakhet_length_increase=10,
@@ -1911,12 +1694,7 @@ def pakhet(pakhet_y=1,pakhet_start=20,pakhet_no=2,pakhet_inner_no=4,
 
 
 
-############################
-### Ptah = Random Spikes ###                
-### The creator god      ###
-############################
-### Developed using
-### (1,50,10,20,150,2,'#FF4444')          
+         
 
 def ptah(ptah_y,ptah_start,ptah_no,
          ptah_size_a,ptah_size_b,
@@ -1939,12 +1717,7 @@ def ptah(ptah_y,ptah_start,ptah_no,
         osiris.setheading(osirisHeadingStart)
         osiris.forward(ptah_size_b)
 
-############################
-### Ra = Random Circles  ###                
-### The sun god          ###
-############################
-### Developed Using
-### (1,0,360,120,360,1,4,'#78AAFF')  
+
 
 def ra(ra_y,ra_angle_a,ra_angle_b,ra_circle_a,
        ra_circle_b,ra_pensize_a,ra_pensize_b,ra_colour): 									
@@ -1965,12 +1738,7 @@ def ra(ra_y,ra_angle_a,ra_angle_b,ra_circle_a,
         osiris.penup()
 
 
-################################
-### Raet = Circles with Dots ###                
-### Female aspect of ra      ###
-################################
-### Developed using
-### 1,4,300,1,1,30,5,30,3,'#2F92CC')
+
 
 def raet(raet_y,raet_no,raet_forward,raet_line_y,
          raet_dot_y,raet_dot_no,raet_dot_reduction,
@@ -2013,12 +1781,7 @@ def raet(raet_y,raet_no,raet_forward,raet_line_y,
             osiris.penup()
             raet_forward = raet_forward - raet_reduction
             
-##############################################
-### Renenutet = Straight Horizontal Lines  ###
-### Goddess of harvest                     ###
-##############################################
-### Developed Using
-### (1,0,20,0,300,15,10,2,'#003456')
+
 
 def renenutet(renenutet_y,renenutet_start,renenutet_no,
               renenutet_span,renenutet_forward,
@@ -2066,12 +1829,7 @@ def renenutet(renenutet_y,renenutet_start,renenutet_no,
         osiris.setheading(osirisHeadingStart)     
 
 
-##############################################
-### Safekh = Random circular chaos dashes  ###
-### Alternative name for seshat            ###
-##############################################
-### Developed Using These Integars 
-### (1,10,4,'#391029',sia) 
+
 
 def safekh(safekh_y,safekh_size,
            safekh_pensize,safekh_color,sia):
@@ -2103,16 +1861,7 @@ def safekh(safekh_y,safekh_size,
                 osiris.pendown()
         osiris.penup()
 
-########################################################
-### Serket = Increasing cone with criss cross lines  ###
-### A scorpion goddess                               ###
-########################################################
-### Developed Using These Integars 
-### serket_y=1,serket_start=50,serket_angle=25,
-### serket_angle_for_outer=35,serket_outer_length=40,
-### serket_increase=30,serket_no=10,
-### serket_inner_pensize=1,serket_outer_pensize=3,
-### serket_pencolor='#FF0900'):
+
 
 def serket(serket_y=1,serket_start=50,serket_angle=25,
            serket_angle_for_outer=35,serket_outer_length=40,
@@ -2120,15 +1869,10 @@ def serket(serket_y=1,serket_start=50,serket_angle=25,
            serket_inner_pensize=1,serket_outer_pensize=3,
            serket_pencolor='#FF0900'):
     if serket_y == 1:
-        ## We know the outer line is on an angle
-        ## we need to take this angle away from 180
-        ## We then take away another 90 because we know
-        ## It is a right angle triangle
+        
         serket_back_angle = (180 - 90 -
                              serket_angle)
-        ## We then take this number, minus the angle
-        ## we used for the ANGLE_FOR_OUTER
-        ## This gives us the angle we need for the SIN function
+        
         serket_new_angle = (180 - serket_angle_for_outer -
                             serket_back_angle)
         ## Now we need to work out the opposite angle
@@ -2194,12 +1938,6 @@ def serket(serket_y=1,serket_start=50,serket_angle=25,
                 serket_outer_length_actual = (serket_outer_length_actual +
                                        serket_increase)
 
-##############################################
-### Seshat = Random circular chaos dashes  ###
-### Goddess of astronomy, maths            ###
-##############################################
-### Developed Using These Integars 
-### (1,10,4,'#391029',sia) 
 
 def seshat(seshat_y,seshat_dashes,
            seshat_pensize,seshat_color,sia):
@@ -2230,12 +1968,7 @@ def seshat(seshat_y,seshat_dashes,
                 osiris.pendown()
         osiris.penup()
 
-####################################
-### Seth = Random pizza slices   ###        
-### God of chaos                 ###    <========= would be good to work on the span issue    
-####################################        
-### Developed Using 
-### (1,10,0,270,0,30,300,5,100,4,'#1234FF') 
+
 
 def seth(seth_y,seth_no,seth_angle_a,
          seth_angle_b,seth_span,seth_dist_a,
@@ -2261,12 +1994,7 @@ def seth(seth_y,seth_no,seth_angle_a,
             osiris.goto(0,0)
             osiris.penup()
             
-##########################################
-### Sobek = Arrows with parallel lines ###
-### God of crocodiles                  ###
-##########################################
-### Developed Using 
-### (1,0,60,20,100,19,6,'#F7A120')  
+
 
 def sobek(sobek_y,sobek_start,sobek_angle,sobek_span,
           sobek_forward,sobek_no,sobek_pensize,sobek_color):    
@@ -2325,12 +2053,6 @@ def sobek(sobek_y,sobek_start,sobek_angle,sobek_span,
         osiris.pendown()
         osiris.goto(osirisReturnX, osirisReturnY)
 
-#####################################
-### Sopdu = Inverted criss-cross  ###
-### God of the sky                ###
-#####################################
-### Developed Using 
-### (1,10,50,120,30,10,sia_range,2,'#FF3456')
 
 def sopdu(sopdu_y,sopdu_no,sopdu_distance,
           sopdu_angle,sopdu_forward,sopdu_increase,
@@ -2353,24 +2075,7 @@ def sopdu(sopdu_y,sopdu_no,sopdu_distance,
             osiris.forward(sopdu_forward+
                            (sia_range*sopdu_increase))
 
-#######################################################
-### Thoth = Randomly generated tile                 ###
-### God of Knowledge, the Moon, Measurement, Wisdom ###
-#######################################################
-########### Developed using
-##thoth_y=1,thoth_height=500,thoth_ray_no_min = 1,
-##thoth_ray_no_max = 4,thoth_ray_reverse_no_min = 1,
-##thoth_ray_reverse_no_max = 4,thoth_stripe_no_min = 1,
-##thoth_stripe_no_max = 4,thoth_stripe_reverse_no_min = 1,
-##thoth_stripe_reverse_no_max = 4,thoth_halo_no_min = 1,
-##thoth_halo_no_max = 4,thoth_circle_no_min = 1,
-##thoth_circle_no_max = 4, 
-##thoth_ray_pensize = 2,thoth_ray_color = '#990000',
-##thoth_ray_reverse_pensize = 2,thoth_ray_reverse_color = '#990000',
-##thoth_stripe_pensize = 2,thoth_stripe_color = '#990000',
-##thoth_stripe_reverse_pensize = 2,thoth_stripe_reverse_color = '#990000',
-##thoth_halo_pensize = 2,thoth_halo_color = '#990000',
-##thoth_circle_pensize = 2,thoth_circle_color = '#990000' 
+
 
 def thoth(
     thoth_y=1,thoth_height=500,thoth_ray_no_min = 1,
@@ -2573,10 +2278,7 @@ def thoth(
                             osiris.penup()            
                     thoth_heading = thoth_heading + 90
 
-#####################################
-### Wadjwer = End bounding box    ###
-### Sea and other lakes           ###
-#####################################
+
 
 
 def wadjwer(wadjwer_y):
@@ -2589,19 +2291,6 @@ def wadjwer(wadjwer_y):
         for i in range(4):
                 osiris.forward  (8000)
                 osiris.left     (90)
-
-
-'''
-##############################################
-##############################################
-##################START#######################
-##############################################
-##############################################
-'''
-    
-	#####################
-	#CONFIGURING OSIRIS##
-	#####################
 
 osiris.speed(2)
 def osirisslow():
@@ -2623,11 +2312,6 @@ osirisHeadingStart = osiris.heading()
 osiris.goto(0,0)
 
 
-#################
-#GEOMETRIC TILES#
-#################
-
-### IMHOTEP      ### ISLAMIC-INSPIRED TILE 
 imhotep(imhotep_y = 0,imhotep_width = 500,imhotep_height = 500,
         imhotep_spike_no = 4,imhotep_row_no = 3,
         imhotep_row_margin_percent = 60,imhotep_middle_buffer_percent=-20,
@@ -2643,26 +2327,16 @@ khepri(khepri_y=0,khepri_no=7,khepri_length=25,
        khepri_density=3,khepri_pensize=0,
        khepri_pencolor='#FF0000',khepri_fillcolor='#00FFC0')
 
-### KHONSU      ### GEOMETRIC TILED STAR ###
-### khonsu_y,khonsu_size,khonsu_no,
-### khonsu_fill_color
+
 khonsu(0,20,2,'#40CCFF')
     
-### APEP        ### TILED PATTERN WITH SQUARES ###
-### apep_y,apep_size,apep_square_y_n,
-### apep_stroke,apep_no,apep_quads,
-### apep_pen_size,apep_fill_color,apep_pen_color):
+
 apep(0,300,0,0,0,5,1,'#000000','#000000')
 
-### BENNU       ### TILED PATTERN WITH TRIANGLES ###
-### bennu_y,bennu_size,bennu_square_y_n,
-### bennu_stroke,bennu_no,bennu_quads,
-### bennu_pen_size,bennu_fill_color,bennu_pen_color
+
 bennu(0,300,0,0,0,5,1,'#000000','#000000')
 
-#####################
-#BASE SHAPES SECTION#
-#####################
+
 
 thoth(
     thoth_y=0,thoth_height=500,thoth_ray_no_min = 1,
@@ -2680,20 +2354,12 @@ thoth(
     thoth_circle_pensize = 2,thoth_circle_color = '#990000' 
     )
 
-### AMUN        ### RANDOM SPIKES ###
-### amun_y,amun_no,amun_angle_a,amun_angle_b,
-### amun_forward_a,amun_forward_b,
-### amun_pensize,amun_color
+
 amun(0,12,0,180,150,800,4,'#FF1493')
 
-### ANUBIS      ### CONCENTRIC SQUARES WITH SHAPES
-### anubis_y,anubis_no,anubis_size,anubis_reduction,
-### anubis_dot_y,anubis_dot_no,anubis_dot_size,
-### anubis_crosses_y,anubis_cross_no,anubis_cross_size,
-### anubis_cross_reduction,anubis_pensize,anubis_color
+
 anubis(0,3,400,40,0,14,6,1,14,8,3,3,'#90CC16')
 
-### GEB         ### FILLED IN CIRCLE SEGMENTS
 geb(geb_y=0,geb_no=13,geb_circum_a=10,geb_circum_b=250,
     geb_distance_a=50,geb_distance_b=400,
     geb_circle_reduction_a=5,geb_circle_reduction_b=75,
@@ -2705,61 +2371,33 @@ hef(hef_y=0,hef_no=12,hef_angle_a=0,hef_angle_b=360,
     hef_length_b=300,hef_pensize=6,hef_pencolor='#FFFFFF',
     hef_fillcolor='#00FF00')
 
-### RAET        ### CIRCLES AND DOTS
-### raet_y,raet_no,raet_forward,raet_line_y,
-### raet_dot_y,raet_dot_no,raet_dot_reduction,
-### raet_reduction,raet_pensize,raet_color
 raet(0,4,300,1,1,30,5,30,3,'#2F92CC')
 
-### SETH        ### RANDOM PIZZA SLICES ###
-### seth_y,seth_no,seth_angle_a,
-### seth_angle_b,seth_span,seth_dist_a,
-### seth_dist_b,seth_circle_a,seth_circle_b,
-### seth_pensize,seth_color
+
 seth(0,10,0,270,0,30,300,5,100,1,'#1234FF') 
 
-################
-#CIRCLE SECTION#
-################
 
-### SHAI & SIA  ### CONTROLS THE DISTANCE BETWEEN EACH CIRCLE
 shai                    = 100
 sia                     = shai
 
 for sia_range in range(1,30): 
       
-### SOPDU       ### INVERTED CRISS CROSS ###
-### sopdu_y,sopdu_no,sopdu_distance,
-### sopdu_angle,sopdu_forward,sopdu_increase,
-### sia_range,sopdu_pensize,sopdu_color
+
     sopdu(1,12,50,120,30,10,sia_range,2,'#FF3456')
 
-### RA          ### RANDOM CIRCLES ###
-### ra_y,ra_angle_a,ra_angle_b,ra_circle_a,
-### ra_circle_b,ra_pensize_a,ra_pensize_b,ra_colour): 
+
     ra(1,0,360,120,360,1,4,'#7800FF')
 
-### SESHAT      ### RANDOM CIRCULAR DASHES - DIFF SIZE ###
-### seshat_y,seshat_dashes,
-### seshat_pensize,seshat_color,sia
+
     seshat(1,40,2,'#001493',sia)
 
-### SAFEKH      ### RANDOM CIRCULAR DASHES - SAME SIZE ###
-### safekh_y,safekh_size,
-### safekh_pensize,safekh_color,sia
+
     safekh(1,80,2,'#001493',sia)
     sia = sia + shai # NO NEED TO CHANGE THIS (EVER)
-################
-#ROTATE SECTION#
-################
 
-### SHU         ### CONTROLS THE AMOUNT OF ROTATIONS
 
 shu = 0
 
-# if you want these on different diagonals - remember to divide it by SHU.
-# EG.   First round = 90 when shu = 6
-#       Second round = 60 when shu = 6
 osiris.setheading(90)
 for shu_a in range(shu):
     osiris.penup()             
@@ -2791,10 +2429,7 @@ for shu_a in range(shu):
     osiris.goto(osirisStartingX,osirisStartingY)
     osiris.setheading(osirisHeadingStart)
 
-### BAST        ### ZIG ZAG LINES
-### bast_y,bast_start,bast_angle,bast_forward,
-### bast_no,bast_pensize,bast_color,
-### osirisStartingX,osirisStartingY):
+
     bast(0,0,30,120,1,4,'#004444',osirisStartingX,osirisStartingY)
 
 ### Make sure we reset the position
@@ -2810,132 +2445,73 @@ for shu_a in range(shu):
     osiris.goto(osirisStartingX,osirisStartingY)
     osiris.setheading(osirisHeadingStart)    
 
-### KHNUM       ### STRONG VERTICAL LINES
-### Yes or No?,Starting Distance,Line Length,Gap between L&R,
-### No of lines,Space between lines,Line reduction,
-### Pen reduction,Pensize,Color
     khnum(0,0,600,100,30,10,0,0,4,'#6544FF')
-    ##khnum(1,-20,300,0,5,10,15,0,2,'#6544FF')## cool option
 
-### Make sure we reset the position
     osiris.goto(osirisStartingX,osirisStartingY)
     osiris.setheading(osirisHeadingStart)
 
-### AKER        ### OUTWARD FACING LINES
     aker(aker_y=0,aker_span=-10,aker_start=150,
          aker_start_increase = 8,aker_no=6,aker_length=550,
          aker_length_increase=-30,aker_angle=12,aker_angle_increase=5,
          aker_gap=5,aker_gap_increase=3,aker_pensize=2,aker_color='#0FC200')
 
-### AMUNET      ### DIAMOND
-### amunet_y,amunet_start,amunet_size
-### amunet_pensize,amunet_color
+
     amunet(0,50,200,9,'#FF4444') 
 
-### ANHUR       ### FORWARD FACING CHEVONS
-### anhur_y,anhur_start,anhur_no,anhur_size,
-### anhur_spacing,anhur_pensize,anhur_color    
+ 
     anhur(0,50,9,380,28,5,'#00FF00')
 
-### ANPUT       ##= DOUBLE HELIX
-### anput_y,anput_start,anput_outer,
-### anput_outer_size,anput_outerpensize,
-### anput_innerpensize,anput_color,
+
     anput(0,50,1,100,4,1,'#FF4444')
 
-### ATEN        ### CIRCLES AND RAYS
-### aten_y,aten_start,aten_circle_size,aten_gap,
-### aten_ray_no,aten_ray_span,aten_ray_length,
-### aten_pensize,aten_ray_pensize,aten_color
+
     aten(0,50,100,10,8,90,300,1,3,'#901273')
    
-### HATHOR      ### ROTATING WINGS   
-### hathor_y,hathor_start,hathor_span,hathor_no,
-### hathor_gap,hathor_angle,hathor_length,
-### hathor_reduction,hathor_indent,hathor_spacing,
-### hathor_pensize,hathor_color
+
     hathor(0,50,0,50,200,8,140,15,15,10,2,'#FF4444')
 
-### HEDETET     ### CURVEY TWISTED FLAX LINES
-### hedetet_y,hedetet_start,hedetet_no,hedetet_size,
-### hedetet_width,hedetet_right_y,hedetet_left_y,
-### hedetet_line_y,hedetet_pensize,hedetet_color
+
     hedetet(0,50,1,100,100,0,1,1,4,'#F012EE')
 
-### KEBECHET    ### CRISS CROSS LINES - HORIZONTAL
-### kebechet_y,kebechet_start,kebechet_no,
-### kebechet_distance,kebechet_length,kebechet_angle,
-### kebechet_change,kebechet_size,kebechet_color
     kebechet(kebechet_y=0,kebechet_start=125,kebechet_no=16,
              kebechet_distance=150,kebechet_length=200,kebechet_angle=45,
              kebechet_change=-10,kebechet_size=3,kebechet_color='#FF4444')
     
-### KUK         ### DIAMOND SHAPES GROWS INSIDE
-### kuk_y,kuk_start,kuk_no,kuk_angle,
-### kuk_depth,kuk_gap,kuk_pensize,kuk_color
+
     kuk(0,0,5,40,200,0.86,3,'#FF4444')
 
-### MAAT        ### REVERSE ANGEL WINGS
-### maat_y,maat_start,maat_no,maat_gap,
-### maat_vert_increase,maat_bar_size,
-### maat_bar_angle,maat_bar_decrease,
-### maat_wing_angle,maat_wing_angle_increase,
-### maat_wing_length,maat_wing_increase,
-### maat_pensize,maat_color
+
     maat(0,50,10,0,20,200,45,5,200,10,200,20,2,'#F778AA') 
 
-### MAFDET      ### OVERLAPPING DIAMONDS
-### mafdet_y,mafdet_start,mafdet_no,mafdet_length,
-### mafdet_vert_increase,mafdet_spacing,mafdet_angle,
-### mafdet_side_increase,mafdet_pensize,mafdet_color
+
     mafdet(0,-20,14,150,10,0.70,45,20,2,'#004444')
 
-### PTAH        ### RANDOM SPIKES
-### ptah_y,ptah_start,ptah_no,
-### ptah_size_a,ptah_size_b,
-### ptah_pensize,ptah_color
+
     ptah(0,100,10,20,300,2,'#FF4444')          
 
-### PAKHET      ### RHOMBUS WITH CRISS CROSS LINES
+
     pakhet(pakhet_y=0, pakhet_start=0, pakhet_no=2, pakhet_inner_no=2,
            pakhet_inner_no_increase=3, pahket_angle_difference=0,
            pakhet_gap=0, pakhet_length=50, pakhet_length_increase=50,
            pakhet_outer_y=0, pakhet_outer_space=1.1, pakhet_main_pensize=6,
            pakhet_inner_pensize=1, pakhet_outline_pensize=2, pakhet_color='#FF4444')
 
-### RENENUTET   ### STRAIGHT HORIZONTAL LINES
-### renenutet_y,renenutet_start,renenutet_no,
-### renenutet_span,renenutet_forward,
-### renenutet_decrease,renenutet_gap,
-### renenutet_pensize,renenutet_color    
+  
     renenutet(0,50,15,10,250,15,10,5,'#FF4444')
     osiris.goto(osirisStartingX,osirisStartingY)
     osiris.setheading(osirisHeadingStart)
    
-### SOBEK       ### ARROWS WITH PARALLEL LINES
-### sobek_y,sobek_start,sobek_angle,sobek_span,
-### sobek_forward,sobek_no,sobek_pensize,sobek_color): 
+ 
     sobek(0,-25,45,26,150,30,4,'#F7A120')  
     
-###################
-#COMMAND TO ROTATE#
-###################
+
 
     osiris.setheading(osirisHeadingStart)
     osirisHeadingStart = osirisHeadingStart + (360/shu)
     osiris.setheading(osirisHeadingStart)
 
 
-'''
-##################################
-##################################
-################END###############
-##################################
-##################################
-'''
-	
-### WADJWER     ### END BOUNDING BOX
-### wadjwer_y
-wadjwer(0)
+
+wadjwer(0)djwer_y
 
 turtle.done()
